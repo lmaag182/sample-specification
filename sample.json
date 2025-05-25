@@ -1,0 +1,52 @@
+{
+  "sheet1_simple_values": {
+    "name": "John Doe",
+    "age": 30,
+    "isStudent": false,
+    "city": "New York"
+  },
+  "sheet2_array_of_objects": [
+    {
+      "id": 1,
+      "product": "Laptop",
+      "price": 1200.50
+    },
+    {
+      "id": 2,
+      "product": "Mouse",
+      "price": 25.99
+    },
+    {
+      "id": 3,
+      "product": "Keyboard",
+      "price": 75.00
+    }
+  ],
+  "sheet3_nested_data": {
+    "schoolName": "Central High",
+    "address": {
+      "street": "123 Main St",
+      "city": "Anytown",
+      "zip": "12345"
+    },
+    "departments": [
+      {
+        "name": "Science",
+        "head": "Dr. Smith",
+        "courses": ["Physics", "Chemistry", "Biology"]
+      },
+      {
+        "name": "Arts",
+        "head": "Ms. Jones",
+        "courses": ["Painting", "Music"]
+      }
+    ]
+  },
+  "sheet4_array_of_primitives": [
+    "Apple",
+    "Banana",
+    "Cherry"
+  ],
+  "sheet5_empty_array": [],
+  "sheet6_empty_object": {}
+}
