@@ -33,12 +33,19 @@
       {
         "name": "Science",
         "head": "Dr. Smith",
-        "courses": ["Physics", "Chemistry", "Biology"]
+        "courses": [
+          "Physics",
+          "Chemistry",
+          "Biology"
+        ]
       },
       {
         "name": "Arts",
         "head": "Ms. Jones",
-        "courses": ["Painting", "Music"]
+        "courses": [
+          "Painting",
+          "Music"
+        ]
       }
     ]
   },
@@ -63,38 +70,97 @@
     "Banana",
     "Cherry"
   ],
-  "sheet6_empty_object": {},
   "market": [
     {
-      "id": "integer", // Unique identifier for the market
-      "name": "string", // Name of the market (e.g., NYSE, NASDAQ)
-      "country": "string", // Country where the market is located
-      "currency": "string" // Currency used in the market (e.g., USD, GBP)
+      "name": "id",
+      "type": "integer",
+      "description": "Unique identifier for the market"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Name of the market (e.g., NYSE, NASDAQ)"
+    },
+    {
+      "name": "country",
+      "type": "string",
+      "description": "Country where the market is located"
+    },
+    {
+      "name": "currency",
+      "type": "string",
+      "description": "Currency used in the market (e.g., USD, GBP)"
     }
   ],
   "listing": [
     {
-      "id": "integer", // Unique identifier for the listing
-      "symbol": "string", // Stock symbol or ticker (e.g., AAPL, TSLA)
-      "market": "string", // Market where the listing is traded
-      "price": "float" // Current price of the listing
+      "name": "id",
+      "type": "integer",
+      "description": "Unique identifier for the listing"
+    },
+    {
+      "name": "symbol",
+      "type": "string",
+      "description": "Stock symbol or ticker (e.g., AAPL, TSLA)"
+    },
+    {
+      "name": "market",
+      "type": "string",
+      "description": "Market where the listing is traded"
+    },
+    {
+      "name": "price",
+      "type": "float",
+      "description": "Current price of the listing"
     }
   ],
   "entity": [
     {
-      "id": "integer", // Unique identifier for the entity
-      "name": "string", // Name of the entity (e.g., Apple Inc.)
-      "type": "string", // Type of entity (e.g., Corporation, Fund)
-      "country": "string" // Country where the entity is registered
+      "name": "id",
+      "type": "integer",
+      "description": "Unique identifier for the entity"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "description": "Name of the entity (e.g., Apple Inc.)"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "description": "Type of entity (e.g., Corporation, Fund)"
+    },
+    {
+      "name": "country",
+      "type": "string",
+      "description": "Country where the entity is registered"
     }
   ],
   "instrument": [
     {
-      "id": "integer", // Unique identifier for the instrument
-      "isin": "string", // International Securities Identification Number
-      "cusip": "string", // Committee on Uniform Securities Identification Procedures number
-      "type": "string", // Type of instrument (e.g., Equity, Bond)
-      "issuer": "string" // Name of the entity issuing the instrument
+      "name": "id",
+      "type": "integer",
+      "description": "Unique identifier for the instrument"
+    },
+    {
+      "name": "isin",
+      "type": "string",
+      "description": "International Securities Identification Number"
+    },
+    {
+      "name": "cusip",
+      "type": "string",
+      "description": "Committee on Uniform Securities Identification Procedures number"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "description": "Type of instrument (e.g., Equity, Bond)"
+    },
+    {
+      "name": "issuer",
+      "type": "string",
+      "description": "Name of the entity issuing the instrument"
     }
   ]
 }
