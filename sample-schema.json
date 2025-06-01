@@ -1,0 +1,275 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "market": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier for the market",
+          "minimum": 1
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the market (e.g., NYSE, NASDAQ)",
+          "minLength": 1
+        },
+        "country": {
+          "type": "string",
+          "description": "Country where the market is located",
+          "minLength": 1
+        },
+        "currency": {
+          "type": "string",
+          "description": "Currency used in the market (e.g., USD, GBP)",
+          "minLength": 3,
+          "maxLength": 3
+        },
+        "type": {
+          "type": "string",
+          "description": "Type of market (e.g., stock_exchange, commodity_exchange)",
+          "enum": [
+            "stock_exchange",
+            "commodity_exchange",
+            "derivatives_exchange",
+            "other"
+          ]
+        },
+        "timezone": {
+          "type": "string",
+          "description": "Timezone of the market (e.g., America/New_York)",
+          "minLength": 1
+        },
+        "major_indices": {
+          "type": "array",
+          "description": "List of major indices traded (e.g., ['S&P 500', 'Dow Jones'])",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "regulatory_body": {
+          "type": "string",
+          "description": "Name of the regulatory body overseeing the market",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "listing": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier for the listing",
+          "minimum": 1
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Stock symbol or ticker (e.g., AAPL, TSLA)",
+          "minLength": 1
+        },
+        "market": {
+          "type": "string",
+          "description": "Market where the listing is traded",
+          "minLength": 1
+        },
+        "price": {
+          "type": "number",
+          "description": "Current price of the listing",
+          "minimum": 0
+        },
+        "company_name": {
+          "type": "string",
+          "description": "Name of the company associated with the listing",
+          "minLength": 1
+        },
+        "sector": {
+          "type": "string",
+          "description": "Sector of the company (e.g., Technology, Finance)",
+          "minLength": 1
+        },
+        "industry": {
+          "type": "string",
+          "description": "Industry of the company (e.g., Semiconductors)",
+          "minLength": 1
+        },
+        "market_cap": {
+          "type": "number",
+          "description": "Market capitalization of the company",
+          "minimum": 0
+        },
+        "volume": {
+          "type": "integer",
+          "description": "Trading volume of the listing",
+          "minimum": 0
+        },
+        "pe_ratio": {
+          "type": "number",
+          "description": "Price to earnings ratio",
+          "minimum": 0
+        },
+        "dividend_yield": {
+          "type": "number",
+          "description": "Dividend yield of the listing",
+          "minimum": 0
+        },
+        "listing_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date when the listing was first listed on the market"
+        }
+      },
+      "additionalProperties": false
+    },
+    "entity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier for the entity",
+          "minimum": 1
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the entity (e.g., Apple Inc.)",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "description": "Type of entity (e.g., Corporation, Fund)",
+          "enum": [
+            "Corporation",
+            "Fund",
+            "Trust",
+            "Other"
+          ]
+        },
+        "country": {
+          "type": "string",
+          "description": "Country where the entity is registered",
+          "minLength": 1
+        },
+        "industry": {
+          "type": "string",
+          "description": "Industry of the entity (e.g., Technology)",
+          "minLength": 1
+        },
+        "sub_industry": {
+          "type": "string",
+          "description": "Sub-industry of the entity (e.g., Software)",
+          "minLength": 1
+        },
+        "employees": {
+          "type": "integer",
+          "description": "Number of employees",
+          "minimum": 0
+        },
+        "revenue": {
+          "type": "number",
+          "description": "Annual revenue",
+          "minimum": 0
+        },
+        "profit": {
+          "type": "number",
+          "description": "Net profit",
+          "minimum": 0
+        },
+        "website": {
+          "type": "string",
+          "format": "uri",
+          "description": "Official website URL"
+        },
+        "ceo": {
+          "type": "string",
+          "description": "Name of the CEO",
+          "minLength": 1
+        },
+        "founded_year": {
+          "type": "integer",
+          "description": "Year the entity was founded",
+          "minimum": 1800
+        }
+      },
+
+      "additionalProperties": false
+    },
+    "instrument": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier for the instrument",
+          "minimum": 1
+        },
+        "isin": {
+          "type": "string",
+          "description": "International Securities Identification Number",
+          "pattern": "^[A-Z]{2}[0-9A-Z]{9}[0-9]$"
+        },
+        "cusip": {
+          "type": "string",
+          "description": "Committee on Uniform Securities Identification Procedures number",
+          "pattern": "^[0-9A-Z]{9}$"
+        },
+        "sedol": {
+          "type": "string",
+          "description": "Stock Exchange Daily Official List number (SEDOL)",
+          "minLength": 1
+        },
+
+        "type": {
+          "type": "string",
+          "description": "Type of instrument (e.g., Equity, Bond)",
+          "enum": [
+            "Equity",
+            "Bond",
+            "Option",
+            "Future",
+            "Other"
+          ]
+        },
+        "issuer": {
+          "type": "string",
+          "description": "Name of the entity issuing the instrument",
+          "minLength": 1
+        },
+        "issue_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date when the instrument was issued"
+        },
+        "maturity_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date when the instrument matures (for bonds, options, etc.)"
+        },
+        "coupon_rate": {
+          "type": "number",
+          "description": "Coupon rate for bonds",
+          "minimum": 0
+        },
+        "strike_price": {
+          "type": "number",
+          "description": "Strike price for options",
+          "minimum": 0
+        },
+        "expiration_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Expiration date for options and futures"
+        },
+        "underlying_asset": {
+          "type": "string",
+          "description": "Underlying asset for derivatives",
+          "minLength": 1
+        }
+      },
+
+      "additionalProperties": false
+    }
+  },
+
+  "additionalProperties": false
+}
